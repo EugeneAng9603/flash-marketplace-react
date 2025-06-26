@@ -5,7 +5,7 @@ import authSlice from './slices/authSlice'
 import productSlice from './slices/productSlice'
 import cartSlice from './slices/cartSlice'
 import flashSaleSlice from './slices/flashSaleSlice'
-import uiSlice from './slices/uiSlice'
+import uiSlice from './slices/uiSlices'
 
 const rootReducer = combineReducers({
   auth: authSlice,

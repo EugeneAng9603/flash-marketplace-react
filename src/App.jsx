@@ -29,6 +29,14 @@ import React, { Suspense, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { Toaster } from 'react-hot-toast'
+// import { store } from './store/index'
+// import { ROUTES } from './utils/constants'
+// import { useAuth } from './hooks/useAuth'
+// import { useWebSocket } from './hooks/useWebSocket'
+// import Layout from './components/layout/Layout'
+// import LoadingSpinner from './components/common/LoadingSpinner'
+// import ErrorBoundary from './components/common/ErrorBoundary'
+// import './styles/globals.css'
 import { store } from '@store/index'
 import { ROUTES } from '@utils/constants'
 import { useAuth } from '@hooks/useAuth'
@@ -36,9 +44,18 @@ import { useWebSocket } from '@hooks/useWebSocket'
 import Layout from '@components/layout/Layout'
 import LoadingSpinner from '@components/common/LoadingSpinner'
 import ErrorBoundary from '@components/common/ErrorBoundary'
-import '@styles/globals.css'
+// import '@styles/globals.css'
 
 // Lazy load pages for better performance
+// const HomePage = React.lazy(() => import('./pages/HomePage'))
+// const LoginPage = React.lazy(() => import('./pages/LoginPage'))
+// const RegisterPage = React.lazy(() => import('./pages/RegisterPage'))
+// const ProductPage = React.lazy(() => import('./pages/ProductPage'))
+// const ProductDetailPage = React.lazy(() => import('./pages/ProductDetailPage'))
+// const CartPage = React.lazy(() => import('./pages/CartPage'))
+// const CheckoutPage = React.lazy(() => import('./pages/CheckoutPage'))
+// const ProfilePage = React.lazy(() => import('./pages/ProfilePage'))
+// const FlashSalesPage = React.lazy(() => import('./pages/FlashSalePage'))
 const HomePage = React.lazy(() => import('@pages/HomePage'))
 const LoginPage = React.lazy(() => import('@pages/LoginPage'))
 const RegisterPage = React.lazy(() => import('@pages/RegisterPage'))
@@ -47,7 +64,7 @@ const ProductDetailPage = React.lazy(() => import('@pages/ProductDetailPage'))
 const CartPage = React.lazy(() => import('@pages/CartPage'))
 const CheckoutPage = React.lazy(() => import('@pages/CheckoutPage'))
 const ProfilePage = React.lazy(() => import('@pages/ProfilePage'))
-const FlashSalesPage = React.lazy(() => import('@pages/FlashSalesPage'))
+const FlashSalesPage = React.lazy(() => import('@pages/FlashSalePage'))
 
 // Protected Route component
 const ProtectedRoute = ({ children }) => {
@@ -73,6 +90,7 @@ const PublicRoute = ({ children }) => {
 
 // App Router component
 const AppRouter = () => {
+  console.log('AppRouter rendered');
   const { initializeAuth } = useAuth()
   
   // Initialize WebSocket connection for real-time updates
