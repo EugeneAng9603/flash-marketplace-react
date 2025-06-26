@@ -44,18 +44,9 @@ import { useWebSocket } from '@hooks/useWebSocket'
 import Layout from '@components/layout/Layout'
 import LoadingSpinner from '@components/common/LoadingSpinner'
 import ErrorBoundary from '@components/common/ErrorBoundary'
-// import '@styles/globals.css'
+import '@styles/global.css'
 
 // Lazy load pages for better performance
-// const HomePage = React.lazy(() => import('./pages/HomePage'))
-// const LoginPage = React.lazy(() => import('./pages/LoginPage'))
-// const RegisterPage = React.lazy(() => import('./pages/RegisterPage'))
-// const ProductPage = React.lazy(() => import('./pages/ProductPage'))
-// const ProductDetailPage = React.lazy(() => import('./pages/ProductDetailPage'))
-// const CartPage = React.lazy(() => import('./pages/CartPage'))
-// const CheckoutPage = React.lazy(() => import('./pages/CheckoutPage'))
-// const ProfilePage = React.lazy(() => import('./pages/ProfilePage'))
-// const FlashSalesPage = React.lazy(() => import('./pages/FlashSalePage'))
 const HomePage = React.lazy(() => import('@pages/HomePage'))
 const LoginPage = React.lazy(() => import('@pages/LoginPage'))
 const RegisterPage = React.lazy(() => import('@pages/RegisterPage'))
@@ -73,7 +64,6 @@ const ProtectedRoute = ({ children }) => {
   if (isLoading) {
     return <LoadingSpinner />
   }
-  
   return isAuthenticated ? children : <Navigate to={ROUTES.LOGIN} replace />
 }
 
