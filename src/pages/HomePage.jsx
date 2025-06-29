@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { ShoppingCart, Clock, Star, Heart, User, Search, Menu, X, Minus, Plus, Trash2, CreditCard, MapPin, Phone, Mail, Eye, EyeOff } from 'lucide-react';
+import { ShoppingCart, Clock, Star, Heart, Search} from 'lucide-react';
+
 
 const HomePage = () => {
   const [flashDeals, setFlashDeals] = useState([]);
@@ -116,3 +117,5 @@ const HomePage = () => {
     </div>
   );
 };
+
+export default HomePage;

@@ -60,7 +60,7 @@ const FlashSalesPage = React.lazy(() => import('@pages/FlashSalePage'))
 // Protected Route component
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, isLoading } = useAuth()
-  
+  console.log({ isAuthenticated, isLoading });
   if (isLoading) {
     return <LoadingSpinner />
   }
@@ -98,6 +98,7 @@ const AppRouter = () => {
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
               {/* Public routes */}
+              {/* <Route path="/" element={<div>Test</div>} /> */}
               <Route path={ROUTES.HOME} element={<HomePage />} />
               <Route path={ROUTES.PRODUCTS} element={<ProductPage />} />
               <Route path={ROUTES.PRODUCT_DETAIL} element={<ProductDetailPage />} />
